@@ -56,15 +56,55 @@ Historinhas is a web application designed to create and manage short stories. It
 5. **Get a Story by ID**:
    - Endpoint: `GET /histories/:historyId`
 
-## Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 # assets 
 ![swag](assets/swag.png)
 
 ![tests](assets/test.png)
+
+# log
+
+archlinux:historinha toga$ git log    
+commit 58f9106ed142d930c44044853c3b6788a9d4cb4d (HEAD -> main, origin/main)
+Author: Rafael Coutinho <70056727+c0utin@users.noreply.github.com>
+Date:   Sat Jun 1 13:43:25 2024 -0300
+
+    Update README.md
+
+commit 159618c74ace9cfae61528b73d7d768ac6200c04
+Author: Rafael Coutinho <70056727+c0utin@users.noreply.github.com>
+Date:   Sat Jun 1 13:41:10 2024 -0300
+
+    Create README.md
+
+commit f019a020538a3ece254c2cbc0eeac1e50511cdca
+Author: Rafael Coutinho <70056727+c0utin@users.noreply.github.com>
+Date:   Sat Jun 1 13:37:28 2024 -0300
+
+    Update user_controller_test.go
+
+commit 1f78300e1814c81051eb53741e0b9774c4798674
+Author: Rafael Coutinho <70056727+c0utin@users.noreply.github.com>
+Date:   Sat Jun 1 13:37:16 2024 -0300
+
+    Update history_controller_test.go
+
+commit 75fb529572ea448c1abf84b806fac9ac6ace3f90
+Author: c0utin <rafaelcouto111@gmail.com>
+Date:   Sat Jun 1 13:36:15 2024 -0300
+
+    feat: add historinhas and gemini integration
+
+commit 7c7aff84778c269fe53d904b87c5997b8c40e08d
+Author: c0utin <rafaelcouto111@gmail.com>
+Date:   Sat Jun 1 12:07:11 2024 -0300
+
+    feat: initial structure
+    
+    Add CRUD for user and visual documentation
+
+
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
