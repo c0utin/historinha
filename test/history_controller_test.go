@@ -75,19 +75,14 @@ func TestCreateHistory(t *testing.T) {
 		t.Errorf("expected status OK; got %v", w.Code)
 	}
 
-	// Verificação do conteúdo da resposta
 	var response model.Historys
 	if err := json.Unmarshal(w.Body.Bytes(), &response); err != nil {
 		t.Fatalf("failed to unmarshal response: %v", err)
 	}
 
-	// Adicione as verificações adicionais necessárias aqui
-
-	// Exemplo de verificação do ID da história criada
 	if response.ID == 0 {
 		t.Errorf("expected non-zero history ID; got %d", response.ID)
 	}
 }
 
-// Implemente testes semelhantes para as outras funções da interface HistorysService
 
