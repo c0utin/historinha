@@ -64,6 +64,7 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 
 This project is licensed under the [MIT License](LICENSE).
 
----
+# assets 
+![swag](assets/swag.png)
 
-Feel free to customize this README according to your project's specific details and requirements.
+![tests](assets/test.png)
