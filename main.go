@@ -16,34 +16,36 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-// @title Historinha	
-// @version	1.0
+// @title Historinha
+// @version 1.0
 // @description historinhas muito loko
-
-// @host 	localhost:42069
+// @host localhost:42069
 // @BasePath /api
-func main(){
-
+func main() {
 	log.Info().Msg("Server running!")
 
 	db := config.DatabaseConnection()
 	validate := validator.New()
 
 	db.Table("users").AutoMigrate(&model.Users{})
+	db.Table("historys").AutoMigrate(&model.Historys{}) 
 
 	usersRepository := repository.NewUsersRepositoryImpl(db)
+	historysRepository := repository.NewHistorysRepositoryImpl(db) 
 
 	usersService := service.NewUsersServiceImpl(usersRepository, validate)
+	historysService := service.NewHistorysServiceImpl(historysRepository, validate) 
 
 	usersController := controller.NewUsersController(usersService)
+	historysController := controller.NewHistorysController(historysService)
 
-	routes := router.NewUsersRouter(usersController)
-
+	routes := router.NewRouter(usersController, historysController)
 	server := &http.Server{
-		Addr: ":42069",
+		Addr:    ":42069",
 		Handler: routes,
 	}
 
 	err := server.ListenAndServe()
 	helper.ErrorPanic(err)
 }
+

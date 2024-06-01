@@ -9,7 +9,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-func NewUsersRouter(usersController *controller.UsersController) *gin.Engine {
+func NewRouter(usersController *controller.UsersController, historysController *controller.HistorysController) *gin.Engine {
 	router := gin.Default()
 
 	// swagger
@@ -27,5 +27,13 @@ func NewUsersRouter(usersController *controller.UsersController) *gin.Engine {
 	usersRouter.PATCH("/:userId", usersController.Update)
 	usersRouter.DELETE("/:userId", usersController.Delete)
 
+	historysRouter := baseRouter.Group("/historys") 
+	historysRouter.GET("", historysController.FindAll)
+	historysRouter.GET("/:historyId", historysController.FindById)
+	historysRouter.POST("", historysController.Create)
+	historysRouter.PATCH("/:historyId", historysController.Update)
+	historysRouter.DELETE("/:historyId", historysController.Delete)
+
 	return router
 }
+
