@@ -97,8 +97,6 @@ func TestFindUserById(t *testing.T) {
     if err := json.Unmarshal(w.Body.Bytes(), &response); err != nil {
         t.Fatalf("failed to unmarshal response: %v", err)
     }
-
-    // Adicione as verificações adicionais necessárias aqui
 }
 
 
