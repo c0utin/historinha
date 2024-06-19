@@ -28,18 +28,18 @@ func main() {
 	validate := validator.New()
 
 	db.Table("users").AutoMigrate(&model.Users{})
-	db.Table("historys").AutoMigrate(&model.Historys{}) 
+//	db.Table("historys").AutoMigrate(&model.Historys{}) 
 
 	usersRepository := repository.NewUsersRepositoryImpl(db)
-	historysRepository := repository.NewHistorysRepositoryImpl(db) 
+//	historysRepository := repository.NewHistorysRepositoryImpl(db) 
 
 	usersService := service.NewUsersServiceImpl(usersRepository, validate)
-	historysService := service.NewHistorysServiceImpl(historysRepository, validate) 
+//	historysService := service.NewHistorysServiceImpl(historysRepository, validate) 
 
 	usersController := controller.NewUsersController(usersService)
-	historysController := controller.NewHistorysController(historysService)
+//	historysController := controller.NewHistorysController(historysService)
 
-	routes := router.NewRouter(usersController, historysController)
+	routes := router.NewRouter(usersController)
 	server := &http.Server{
 		Addr:    ":42069",
 		Handler: routes,
